@@ -13,9 +13,14 @@
 |------|-----|
 | **GitHub repo** | [github.com/Prabhashsingh17/Team-task-manager-pro](https://github.com/Prabhashsingh17/Team-task-manager-pro) |
 | **Live app (frontend)** | _After Railway deploy:_ replace below with your public frontend URL |
+| **Demo Guide — local only** | [http://localhost:5173/brief](http://localhost:5173/brief) (requires app running locally) |
+| **Demo Guide — deployed** | `https://YOUR-FRONTEND-SERVICE.up.railway.app/brief` _(same page after Railway; replace host)_ |
 
 **Frontend (paste your live deployment link):** `https://YOUR-FRONTEND-SERVICE.up.railway.app`  
-**Backend health check:** `https://YOUR-BACKEND-SERVICE.up.railway.app/health`
+**Backend health check:** `https://YOUR-BACKEND-SERVICE.up.railway.app/health`  
+**Coordinator / demo briefing page:** [**localhost `/brief`**](http://localhost:5173/brief) **or** **`https://…up.railway.app/brief`** after deploy.
+
+> ⚠️ **Important:** `localhost:5173` **only works on the same PC where** you've run **Local Development** (backend + Postgres + `npm run dev` for frontend). From GitHub, another person cannot open *your* localhost — they must clone this repo and run locally, **or** you give them your **Railway frontend URL + `/brief`** so it opens without setup.
 
 > Tip: Deploy using the [Railway steps](#-deploy-on-railway-step-by-step) below, copy the Railway **public domain** strings, edit this README, commit, and push — then paste the **same frontend URL** in your GitHub repo **About → Website** field.
 
