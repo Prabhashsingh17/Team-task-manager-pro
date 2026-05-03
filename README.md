@@ -7,6 +7,20 @@
 ![Tech Stack](https://img.shields.io/badge/Database-PostgreSQL-336791?style=flat-square)
 ![Deployment](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=flat-square)
 
+## 🔗 Links
+
+| Link | URL |
+|------|-----|
+| **GitHub repo** | [github.com/Prabhashsingh17/Team-task-manager-pro](https://github.com/Prabhashsingh17/Team-task-manager-pro) |
+| **Live app (frontend)** | _After Railway deploy:_ replace below with your public frontend URL |
+
+**Frontend (paste your live deployment link):** `https://YOUR-FRONTEND-SERVICE.up.railway.app`  
+**Backend health check:** `https://YOUR-BACKEND-SERVICE.up.railway.app/health`
+
+> Tip: Deploy using the [Railway steps](#-deploy-on-railway-step-by-step) below, copy the Railway **public domain** strings, edit this README, commit, and push — then paste the **same frontend URL** in your GitHub repo **About → Website** field.
+
+---
+
 ## ✨ Features
 
 - 🔐 **JWT Authentication** — Secure signup/login with token-based sessions
@@ -221,5 +235,3 @@ team-task-manager/
 ---
 
 *Built with ❤️ — Top 1% quality full-stack application*
-
-**Repository:** [github.com/Prabhashsingh17/Team-task-manager-pro](https://github.com/Prabhashsingh17/Team-task-manager-pro)
