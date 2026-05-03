@@ -7,6 +7,8 @@
 ![Tech Stack](https://img.shields.io/badge/Database-PostgreSQL-336791?style=flat-square)
 ![Deployment](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=flat-square)
 
+**Demo Guide (Coordinator briefing):** **[http://localhost:5173/brief](http://localhost:5173/brief)** — pehle app local run karke login karo _(live URL Railway limit ke baad README me `/brief` wale pattern se lagana hai)._
+
 ## 🔗 Links
 
 | Link | URL |
