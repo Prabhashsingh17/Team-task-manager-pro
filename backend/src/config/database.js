@@ -26,8 +26,11 @@ const initDB = async () => {
         status VARCHAR(30) DEFAULT 'active' CHECK (status IN ('active', 'completed', 'on-hold')),
         owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
         deadline DATE,
+        sector VARCHAR(100),
         created_at TIMESTAMP DEFAULT NOW()
       );
+
+      ALTER TABLE projects ADD COLUMN IF NOT EXISTS sector VARCHAR(100);
 
       CREATE TABLE IF NOT EXISTS project_members (
         project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,

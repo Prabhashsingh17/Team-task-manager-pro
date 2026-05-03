@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { pool } = require('../config/database');
+const { seedDemoPortfolioIfEligible } = require('../demoSeed');
 
 const avatars = ['🦁', '🐯', '🦊', '🐺', '🦝', '🐻', '🦄', '🐲', '🦅', '🐬'];
 
@@ -35,7 +36,16 @@ exports.signup = async (req, res) => {
     
     const user = result.rows[0];
     const token = generateToken(user);
-    
+
+    try {
+      const pc = await pool.query('SELECT COUNT(*)::int AS c FROM projects');
+      if (pc.rows[0].c === 0) {
+        await seedDemoPortfolioIfEligible(pool, { ownerId: user.id });
+      }
+    } catch (seedErr) {
+      console.error('Demo portfolio seed failed:', seedErr.message);
+    }
+
     res.status(201).json({ token, user });
   } catch (err) {
     console.error(err);

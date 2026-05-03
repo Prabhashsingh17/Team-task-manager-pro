@@ -11,6 +11,7 @@ export default function Sidebar() {
     { to: '/dashboard', icon: '📊', label: 'Dashboard' },
     { to: '/projects', icon: '📁', label: 'Projects' },
     { to: '/my-tasks', icon: '✅', label: 'My Tasks' },
+    { to: '/brief', icon: '📣', label: 'Demo Guide' },
   ];
 
   if (user?.role === 'admin') {

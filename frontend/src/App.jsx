@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetail from './pages/ProjectDetail';
 import MyTasksPage from './pages/MyTasksPage';
+import CoordinatorBrief from './pages/CoordinatorBrief';
 
 function ProtectedLayout({ children }) {
   const { user, loading } = useAuth();
@@ -40,6 +41,7 @@ function AppRoutes() {
       <Route path="/projects" element={<ProtectedLayout><ProjectsPage /></ProtectedLayout>} />
       <Route path="/projects/:id" element={<ProtectedLayout><ProjectDetail /></ProtectedLayout>} />
       <Route path="/my-tasks" element={<ProtectedLayout><MyTasksPage /></ProtectedLayout>} />
+      <Route path="/brief" element={<ProtectedLayout><CoordinatorBrief /></ProtectedLayout>} />
       <Route path="/" element={<Navigate to="/dashboard" />} />
       <Route path="*" element={<Navigate to="/dashboard" />} />
     </Routes>

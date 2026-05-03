@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../utils/api';
+import { sectorVisual } from '../utils/sectors';
 import { useToast } from '../context/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
@@ -215,14 +216,28 @@ export default function ProjectDetail() {
   const { project, members, tasks } = data;
   const pct = project.task_count > 0 ? Math.round((project.completed_tasks / project.task_count) * 100) : 0;
   const isAdmin = user?.role === 'admin' || project.owner_id === user?.id;
+  const sec = sectorVisual(project.sector);
 
   return (
     <div className="animate-fade">
       {/* Header */}
       <div className="page-header">
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6, flexWrap: 'wrap' }}>
             <button className="btn btn-ghost btn-sm" onClick={() => navigate('/projects')}>← Back</button>
+            {project.sector && (
+              <span
+                className="chip"
+                style={{
+                  fontWeight: 600,
+                  border: `1px solid ${sec.border}`,
+                  background: sec.accent,
+                  color: 'var(--text)',
+                }}
+              >
+                {sec.icon} {project.sector}
+              </span>
+            )}
             <span className={`badge badge-${project.status === 'active' ? 'done' : project.status === 'completed' ? 'in-progress' : 'review'}`}>{project.status}</span>
           </div>
           <h1 className="page-title">{project.name}</h1>
