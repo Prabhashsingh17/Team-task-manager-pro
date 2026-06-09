@@ -147,6 +147,14 @@ File: `sql/analysis_queries.sql`
 
 ---
 
+## Live Demo (Permanent)
+
+**Dashboard URL:** https://prabhashsingh17.github.io/Team-task-manager-pro/
+
+24/7 live — GitHub Pages par hosted. PC band hone par bhi kaam karta hai.
+
+---
+
 ## Deployment
 
 ### Option 1: Streamlit Community Cloud (Free)
